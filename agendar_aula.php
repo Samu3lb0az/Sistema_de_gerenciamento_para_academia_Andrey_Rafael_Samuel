@@ -1,33 +1,59 @@
+<?php
+include "conexao.php";
+
+$instrutores_por_especialidade = [];
+
+if (isset($_GET['aula'])) {
+    $aula = $_GET['aula'];
+
+    // Consulta corrigida com JOIN para obter o nome do instrutor
+    $sql = "SELECT i.instrutor_nome 
+            FROM especialidade e 
+            INNER JOIN instrutor i ON e.fk_instrutor_id = i.instrutor_cod
+            WHERE e.especialidade_tipo = ?";
+    
+    $stmt = $conexao->prepare($sql);
+    $stmt->bind_param("s", $aula);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    $instrutores = [];
+    while ($row = $result->fetch_assoc()) {
+        $instrutores[] = $row['instrutor_nome'];
+    }
+
+    echo json_encode($instrutores);
+    exit; 
+}
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agendar aula</title>
     <link rel="stylesheet" href="./css/agendar_aula.css">
-    <script src="./javascript/agendar_aula.js"></script>
+    <script>
+        let instrutoresPorEspecialidade = <?php echo json_encode($instrutores_por_especialidade); ?>;
+    </script>
+    <script src="./javascript/agendar_aula.js" defer></script>
 </head>
 <body>
-
-<header>
-
+    <header>
         <div class="bx bx-menu" id="menu-icon"></div>
-
         <a href="./index.php" class="logo">Zen <span>Fitness</span></a>
-
         <ul class="navbar">
             <li><a href="./index.php">Home</a></li>
             <li><a href="#sobre">Sobre nós</a></li>
             <li><a href="./agendar_aula.php">Agendar aula</a></li>
         </ul>
-
         <div class="top-btn">
             <a href="cadastro.php" class="nav-btn">Matricule-se</a>
         </div>
-
     </header>
 
-        <h1>Agende sua Aula</h1>
+    <h1>Agende sua Aula</h1>
 
     <main class="grid-container">
         <div class="box" onclick="abrirAgendamento('Musculação')">Musculação</div>
@@ -51,12 +77,7 @@
             </select>
 
             <label for="professor">Escolha um professor:</label>
-            <select id="professor">
-                <option>Marcos</option>
-                <option>Juliana</option>
-                <option>Fernando</option>
-                <option>Ana</option>
-            </select>
+            <select id="professor"></select>
 
             <div class="modal-buttons">
                 <button onclick="confirmarAgendamento()">Confirmar</button>
@@ -64,6 +85,5 @@
             </div>
         </div>
     </div>
-
 </body>
 </html>
