@@ -26,6 +26,8 @@ if (isset($_GET['aula'])) {
 }
 ?>
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <!DOCTYPE html>
 <html lang="pt">
 <head>
