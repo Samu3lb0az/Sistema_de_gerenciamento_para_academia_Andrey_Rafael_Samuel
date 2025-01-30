@@ -6,7 +6,6 @@ $instrutores_por_especialidade = [];
 if (isset($_GET['aula'])) {
     $aula = $_GET['aula'];
 
-    // Consulta corrigida com JOIN para obter o nome do instrutor
     $sql = "SELECT i.instrutor_nome 
             FROM especialidade e 
             INNER JOIN instrutor i ON e.fk_instrutor_id = i.instrutor_cod

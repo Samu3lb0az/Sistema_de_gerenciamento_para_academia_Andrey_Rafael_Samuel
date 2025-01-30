@@ -29,7 +29,6 @@
     </header>
 
 
-    <!-- Section da página home -->
      <section class="home" id="home">
         <div class="home-content">
             <h3>Construa o seu</h3>
@@ -49,7 +48,6 @@
         
      </section>
 
-    <!-- Section da página sobre -->
      
     <section class="sobre" id="sobre">
         <div class="sobre-img">

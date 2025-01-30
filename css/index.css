@@ -92,7 +92,6 @@ header {
     display: none;
 }
 
-/* Section da home */
 
 .home{
     display: flex;
@@ -217,7 +216,6 @@ span{
     transform: translateY(20px);
 }
 
-/* Responsividade para telas menores que 1024px (Tablets e Laptops Pequenos) */
 @media screen and (max-width: 1024px) {
     .home {
         flex-direction: column;
@@ -257,7 +255,6 @@ span{
     }
 }
 
-/* Responsividade para telas menores que 768px (Tablets Pequenos e Celulares Grandes) */
 @media screen and (max-width: 768px) {
     header {
         padding: 15px 5%;
@@ -313,7 +310,6 @@ span{
 }
 
 
-/* Responsividade para telas menores que 480px (Celulares Pequenos) */
 @media screen and (max-width: 480px) {
     header {
         padding: 15px 3%;
