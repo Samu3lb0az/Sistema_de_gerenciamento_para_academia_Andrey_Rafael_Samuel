@@ -124,7 +124,7 @@
             <input type="text" name="nome" placeholder="Nome" required>
             <input type="text" name="cpf" placeholder="CPF" required pattern="\d{11}" title="Digite um CPF com 11 dígitos (apenas números)">
             <input type="tel" name="telefone" placeholder="Telefone" required pattern="\d{10,11}" title="Digite um telefone com 10 ou 11 dígitos (apenas números)">
-            <button type="submit">Cadastrar</button>
+            <button type="submit" href="./index.php">Cadastrar</button>
         </form>
     </div>
     <div id="alert" class="alert">
@@ -132,16 +132,16 @@
     </div>
 
     <script>
-        const form = document.getElementById('formCadastro');
-        const alert = document.getElementById('alert');
+       const form = document.getElementById('formCadastro');
+    const alert = document.getElementById('alert');
 
-        form.addEventListener('submit', function(event) {
-            event.preventDefault(); 
-            alert.classList.add('show');
-            setTimeout(() => {
-                alert.classList.remove('show');
-            }, 3000);
-        });
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        alert.classList.add('show');
+        setTimeout(() => {
+            window.location.href = 'index.php'; 
+        }, 3000);
+    });
     </script>
 </body>
 </html>
