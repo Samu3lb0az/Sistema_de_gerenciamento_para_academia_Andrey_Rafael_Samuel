@@ -78,6 +78,25 @@
             background-color:rgb(175, 111, 15);
         }
 
+        .botao {
+            position: fixed;
+            top: 10px; 
+            left: 10px; 
+            background-color:rgb(231, 145, 15);
+            color: white;
+            padding: 10px 20px; 
+            text-decoration: none; 
+            border-radius: 5px; 
+            font-size: 16px;
+            z-index: 4;
+            margin-top: 40px;
+            margin-left: 50px; 
+        }
+
+        .botao:hover {
+            background-color:rgb(175, 111, 15);
+        }
+
         @media (max-width: 600px) {
             .container {
                 width: 90%;
@@ -124,24 +143,25 @@
             <input type="text" name="nome" placeholder="Nome" required>
             <input type="text" name="cpf" placeholder="CPF" required pattern="\d{11}" title="Digite um CPF com 11 dígitos (apenas números)">
             <input type="tel" name="telefone" placeholder="Telefone" required pattern="\d{10,11}" title="Digite um telefone com 10 ou 11 dígitos (apenas números)">
-            <button type="submit" href="./index.php">Cadastrar</button>
+            <button type="submit">Cadastrar</button>
         </form>
     </div>
     <div id="alert" class="alert">
         Cadastro realizado com sucesso!
     </div>
+    <a href="index.php" class="botao">&#9664;</a>
 
     <script>
-       const form = document.getElementById('formCadastro');
-    const alert = document.getElementById('alert');
+        const form = document.getElementById('formCadastro');
+        const alert = document.getElementById('alert');
 
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
-        alert.classList.add('show');
-        setTimeout(() => {
-            window.location.href = 'index.php'; 
-        }, 3000);
-    });
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert.classList.add('show');
+            setTimeout(() => {
+                window.location.href = 'index.php'; 
+            }, 3000);
+        });
     </script>
 </body>
 </html>
