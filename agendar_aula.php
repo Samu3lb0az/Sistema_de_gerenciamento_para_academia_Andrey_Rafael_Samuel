@@ -18,8 +18,8 @@
         <ul class="navbar">
             <li><a href="#home">Home</a></li>
             <li><a href="#sobre">Sobre nós</a></li>
-            <li><a href="agendar_aula.php"></a>Agendar aulas</li>
             <li><a href="login.php">Sou Aluno</a></li>
+            <li><a href="./agendar_aula.php">Agendar aula</a></li>
         </ul>
 
         <div class="top-btn">
@@ -35,6 +35,8 @@
         <div class="box" onclick="abrirAgendamento('Pilates')">Pilates</div>
         <div class="box" onclick="abrirAgendamento('Yoga')">Yoga</div>
         <div class="box" onclick="abrirAgendamento('Crossfit')">Crossfit</div>
+        <div class="box" onclick="abrirAgendamento('Natação')">Natação</div>
+        <div class="box" onclick="abrirAgendamento('Alongamento')">Alongamento</div>
     </main>
 
     <div id="modal" class="modal">
