@@ -13,7 +13,7 @@
 
         <div class="bx bx-menu" id="menu-icon"></div>
 
-        <a href="#home" class="logo">Zen <span>Fitness</span></a>
+        <a href="./index.php" class="logo">Zen <span>Fitness</span></a>
 
         <ul class="navbar">
             <li><a href="./index.php">Home</a></li>
