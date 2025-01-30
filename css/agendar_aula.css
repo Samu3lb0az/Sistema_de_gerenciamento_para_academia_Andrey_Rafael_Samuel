@@ -1,4 +1,3 @@
-/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -10,39 +9,134 @@ body {
     background-color: #f4f4f4;
     text-align: center;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Centraliza verticalmente */
+    height: 100vh;
+    padding-top: 100px; /* Para evitar sobreposição do header */
 }
 
-/* Centraliza os cards */
+/* Cabeçalho */
+header {
+    background-color: #222;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    height: 80px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo span {
+    color: #f39c12;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.navbar {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar li {
+    display: inline;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.3rem;
+    padding: 10px 15px;
+    transition: all 0.5s ease;
+    font-weight: 500;
+}
+
+.navbar a:hover {
+    background-color: #f39c12;
+    border-radius: 5px;
+    color: #222;
+}
+
+.nav-btn {
+    display: inline-block;
+    padding: 9px 15px;
+    background: transparent;
+    color: #f39c12;
+    border: 2px solid #f39c12;
+    border-radius: 1rem;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.5s ease-in-out;
+}
+
+.nav-btn:hover {
+    background-color: #f39c12;
+    color: white;
+    box-shadow: 0px 0px 18px #f39c12;
+}
+
+#menu-icon {
+    font-size: 3rem;
+    color: #f39c12;
+    cursor: pointer;
+    display: none;
+}
+
+/* Título */
+h1 {
+    font-size: 28px;
+    text-transform: uppercase;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+/* Layout dos Cards */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Mantém os tamanhos iguais */
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 20px;
     padding: 20px;
-    max-width: 700px; /* Define um limite para manter a estrutura */
+    max-width: 900px;
 }
 
-/* Estilização dos cards */
+/* Estilização dos Cards */
 .box {
     background-color: #222;
     color: white;
-    padding: 30px;
+    padding: 40px;
     border-radius: 10px;
     text-transform: uppercase;
     cursor: pointer;
-    transition: transform 0.3s, background-color 0.3s;
-    min-height: 150px; /* Define um tamanho fixo para todos os cards */
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+    min-height: 180px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 18px;
+    font-size: 20px;
+    position: relative;
 }
 
 .box:hover {
     transform: scale(1.05);
     background-color: #f39c12;
+    box-shadow: 0px 0px 15px rgba(255, 200, 50, 0.8);
 }
 
 /* Estilos do Modal */
@@ -62,20 +156,25 @@ body {
     background: white;
     padding: 20px;
     border-radius: 10px;
-    width: 300px;
+    width: 320px;
     text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .modal-buttons {
     margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .modal-buttons button {
     padding: 10px;
-    margin: 5px;
     border: none;
     cursor: pointer;
     border-radius: 5px;
+    font-size: 16px;
+    flex: 1;
+    margin: 5px;
 }
 
 .modal-buttons button:first-child {
@@ -88,7 +187,7 @@ body {
     color: white;
 }
 
-/* Alerta personalizado */
+/* Alerta Personalizado */
 .custom-alert {
     position: fixed;
     top: 0;
@@ -106,7 +205,7 @@ body {
     padding: 20px;
     border-radius: 10px;
     text-align: center;
-    width: 250px;
+    width: 280px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -123,6 +222,7 @@ body {
     cursor: pointer;
     border-radius: 5px;
     font-size: 16px;
+    transition: background 0.3s;
 }
 
 .alert-box button:hover {

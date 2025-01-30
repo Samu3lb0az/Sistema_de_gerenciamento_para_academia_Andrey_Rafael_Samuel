@@ -9,17 +9,32 @@
 </head>
 <body>
 
-    <header>
-        <h1>Agende sua Aula</h1>
+<header>
+
+        <div class="bx bx-menu" id="menu-icon"></div>
+
+        <a href="#home" class="logo">Zen <span>Fitness</span></a>
+
+        <ul class="navbar">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#sobre">Sobre nós</a></li>
+            <li><a href="agendar_aula.php"></a>Agendar aulas</li>
+            <li><a href="login.php">Sou Aluno</a></li>
+        </ul>
+
+        <div class="top-btn">
+            <a href="cadastro.php" class="nav-btn">Matricule-se</a>
+        </div>
+
     </header>
+
+        <h1>Agende sua Aula</h1>
 
     <main class="grid-container">
         <div class="box" onclick="abrirAgendamento('Musculação')">Musculação</div>
         <div class="box" onclick="abrirAgendamento('Pilates')">Pilates</div>
         <div class="box" onclick="abrirAgendamento('Yoga')">Yoga</div>
         <div class="box" onclick="abrirAgendamento('Crossfit')">Crossfit</div>
-        <div class="box" onclick="abrirAgendamento('Spinning')">Spinning</div>
-        <div class="box" onclick="abrirAgendamento('Funcional')">Treinamento Funcional</div>
     </main>
 
     <div id="modal" class="modal">
