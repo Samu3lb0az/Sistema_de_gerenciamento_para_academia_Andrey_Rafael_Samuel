@@ -12,14 +12,14 @@
 
     <header>
 
-        <box-icon name='menu' id="menu-icon"></box-icon>
+        <div class="bx bx-menu" id="menu-icon"></div>
 
         <a href="#home" class="logo">Zen <span>Fitness</span></a>
 
         <ul class="navbar">
             <li><a href="#home">Home</a></li>
             <li><a href="#sobre">Sobre nós</a></li>
-            <li><a href="aulas.php"></a>Agendar aulas</li>
+            <li><a href="agendar_aula.php"></a>Agendar aulas</li>
             <li><a href="login.php">Sou Aluno</a></li>
         </ul>
 

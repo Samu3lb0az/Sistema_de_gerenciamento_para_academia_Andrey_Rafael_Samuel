@@ -5,6 +5,12 @@
     font-family: Arial, sans-serif;
 }
 
+
+section {
+    min-height: 100vh;
+    padding: 10rem 8% 2rem;
+}
+
 header {
     background-color: #222;
     display: flex;
@@ -24,10 +30,16 @@ header {
     font-size: 1.5rem;
     font-weight: bold;
     text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
 }
 
 .logo span {
     color: #f39c12;
+}
+
+.logo:hover{
+    transform: scale(1.1);
 }
 
 .navbar {
@@ -43,13 +55,36 @@ header {
 .navbar a {
     color: white;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 1.3rem;
     padding: 10px 15px;
-    transition: 0.3s;
+    transition: all 0.5s ease;
+    font-weight: 500;
 }
 
 .navbar a:hover {
     background-color: #f39c12;
     border-radius: 5px;
     color: #222;
+}
+.nav-btn{
+    display: inline-block;
+    padding: 9px 7px;
+    background: transparent;
+    color: #f39c12;
+    border: 2px solid #f39c12;
+    border-radius: 1rem;
+    font-size: 1.1rem;
+    text-decoration: none;
+}
+.nav-btn:hover{
+    background-color: #f39c12;
+    color: white;
+    box-shadow: 0px 0px 18px #f39c12;
+    transition: all 0.5s ease-in-out;
+}
+#menu-icon{
+    font-size: 3rem;
+    color: #f39c12;
+    cursor: pointer;
+    display: none;
 }
