@@ -8,7 +8,6 @@
     <script src="./javascript/index.js"></script>
 </head>
 <body>
-    <!-- Header principal -->
 
     <header>
 
