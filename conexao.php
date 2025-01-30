@@ -2,7 +2,7 @@
 $servidor = "localhost";
 $usuario = "root";
 $senha = "";
-$banco = "db_academia";
+$banco = "db_academia_";
 
 $conexao = new mysqli($servidor, $usuario, $senha, $banco);
 
