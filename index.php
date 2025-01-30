@@ -19,7 +19,7 @@
         <ul class="navbar">
             <li><a href="#home">Home</a></li>
             <li><a href="#sobre">Sobre nós</a></li>
-            <li><a href="aulas.php"></a>Agendar aulas</li>
+            <li><a href="agendar_aula.php"></a>Agendar aulas</li>
             <li><a href="login.php">Sou Aluno</a></li>
         </ul>
 
