@@ -92,8 +92,8 @@
         <h2 id="zenfitness">Zen <span class="fitness">Fitness</span></h2>
         <form action="#" method="POST">
             <input type="text" name="nome" placeholder="Nome" required>
-            <input type="email" name="email" placeholder="E-mail" required>
-            <input type="password" name="senha" placeholder="Senha" required>
+            <input type="text" name="cpf" placeholder="CPF" required pattern="\d{11}" title="Digite um CPF com 11 dígitos (apenas números)">
+            <input type="tel" name="telefone" placeholder="Telefone" required pattern="\d{10,11}" title="Digite um telefone com 10 ou 11 dígitos (apenas números)">
             <button type="submit">Cadastrar</button>
         </form>
     </div>
