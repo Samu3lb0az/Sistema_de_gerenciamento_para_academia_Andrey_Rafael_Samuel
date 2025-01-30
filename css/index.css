@@ -5,6 +5,9 @@
     font-family: Arial, sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
 
 section {
     min-height: 100vh;
@@ -176,6 +179,169 @@ span{
     line-height: 1.2;
 }
 .sobre-content p{
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     margin: 2rem 0 2rem;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px; 
+    height: 50px;
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    transition: opacity 0.3s, transform 0.3s;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.back-to-top:hover {
+    background-color: #e67e22;
+}
+
+.back-to-top.show {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.back-to-top.hide {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* Responsividade para telas menores que 1024px (Tablets e Laptops Pequenos) */
+@media screen and (max-width: 1024px) {
+    .home {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 12rem;
+    }
+
+    .home-content h1 {
+        font-size: 4rem;
+    }
+
+    .home-content h3,
+    .home-content span {
+        font-size: 3rem;
+    }
+
+    .home-img img {
+        width: 60vw;
+        margin-top: 2rem;
+    }
+
+    .sobre {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sobre-img img {
+        width: 80vw;
+    }
+
+    .sobre-content {
+        padding: 2rem;
+    }
+
+    .heading {
+        font-size: 3.5rem;
+    }
+}
+
+/* Responsividade para telas menores que 768px (Tablets Pequenos e Celulares Grandes) */
+@media screen and (max-width: 768px) {
+    header {
+        padding: 15px 5%;
+    }
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: #222;
+        text-align: center;
+        padding: 1rem 0;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .navbar a {
+        display: block;
+        padding: 10px;
+        font-size: 1.2rem;
+    }
+
+    #menu-icon {
+        display: block;
+    }
+
+    .home-content h1 {
+        font-size: 3.5rem;
+    }
+
+    .home-content h3,
+    .home-content span {
+        font-size: 2.5rem;
+    }
+
+    .home-content p {
+        font-size: 1.3rem;
+    }
+
+    .home-img img {
+        width: 70vw;
+    }
+
+    .btn {
+        font-size: 1.4rem;
+        padding: 0.8rem 2rem;
+    }
+}
+
+
+/* Responsividade para telas menores que 480px (Celulares Pequenos) */
+@media screen and (max-width: 480px) {
+    header {
+        padding: 15px 3%;
+    }
+
+    .home-content h1 {
+        font-size: 3rem;
+    }
+
+    .home-content h3,
+    .home-content span {
+        font-size: 2rem;
+    }
+
+    .home-content p {
+        font-size: 1.2rem;
+    }
+
+    .home-img img {
+        width: 80vw;
+    }
+
+    .sobre-content p {
+        font-size: 1.2rem;
+    }
+
+    .btn {
+        font-size: 1.2rem;
+        padding: 0.7rem 1.5rem;
+    }
 }

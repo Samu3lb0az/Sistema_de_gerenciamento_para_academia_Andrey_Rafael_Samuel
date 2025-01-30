@@ -67,6 +67,11 @@
 
             <a href="cadastro.php" class="btn">Matricule-se agora!</a>
 
+            <button id="backToTop" class="back-to-top">
+                &#8679;
+            </button>
+
+
         </div>
          
     </section>
