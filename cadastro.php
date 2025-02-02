@@ -1,3 +1,54 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "db_academia";
+$conn = new mysqli($servername, $username, $password, $database);
+
+if ($conn->connect_error) {
+    die("Conexão falhou: " . $conn->connect_error);
+}
+
+$mensagem = "";
+
+session_start();
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nome = $_POST['nome'];
+    $cpf = $_POST['cpf'];
+    $telefone = $_POST['telefone'];
+
+    if (empty($nome) || empty($cpf) || empty($telefone)) {
+        $mensagem = "Todos os campos são obrigatórios.";
+    } else {
+
+        $sql = "INSERT INTO aluno (aluno_nome, aluno_cpf, aluno_telefone) VALUES (?, ?, ?)";
+        $stmt = $conn->prepare($sql);
+
+        if (!$stmt) {
+            $mensagem = "Erro na preparação da consulta: " . $conn->error;
+        } else {
+            $stmt->bind_param("sss", $nome, $cpf, $telefone);
+
+            if ($stmt->execute()) {
+
+                $_SESSION['aluno_id'] = $conn->insert_id; 
+                $mensagem = "Cadastro realizado com sucesso!";
+                header("Location: index.php");
+                exit();
+            } else {
+                $mensagem = "Erro ao cadastrar: " . $stmt->error;
+            }
+
+            $stmt->close();
+        }
+    }
+}
+
+
+$conn->close();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -102,6 +153,7 @@
                 width: 90%;
             }
         }
+
         .alert {
             display: none;
             position: fixed;
@@ -109,7 +161,7 @@
             left: 50%;
             transform: translateX(-50%);
             padding: 20px;
-            background-color:rgb(248, 166, 3);
+            background-color: rgb(248, 166, 3);
             color: white;
             border-radius: 5px;
             font-size: 16px;
@@ -136,28 +188,31 @@
     </style>
 </head>
 <body>
+
+    <?php if ($mensagem): ?>
+        <div class="alert show"><?php echo $mensagem; ?></div>
+    <?php endif; ?>
+
     <div class="container">
-        <h2>Seja bem-vindo ao</h2>
-        <h2 id="zenfitness">Zen <span class="fitness">Fitness</span></h2>
-        <form id="formCadastro" action="#">
+        <form id="formCadastro" method="POST">
+            <h2>Cadastro de Aluno</h2>
             <input type="text" name="nome" placeholder="Nome" required>
-            <input type="text" name="cpf" placeholder="CPF" required pattern="\d{11}" title="Digite um CPF com 11 dígitos (apenas números)">
-            <input type="tel" name="telefone" placeholder="Telefone" required pattern="\d{10,11}" title="Digite um telefone com 10 ou 11 dígitos (apenas números)">
+            <input type="text" name="cpf" placeholder="CPF" required>
+            <input type="tel" name="telefone" placeholder="Telefone" required>
             <button type="submit">Cadastrar</button>
         </form>
     </div>
-    <div id="alert" class="alert">
-        Cadastro realizado com sucesso!
-    </div>
+
     <a href="index.php" class="botao">&#9664;</a>
 
     <script>
         const form = document.getElementById('formCadastro');
-        const alert = document.getElementById('alert');
+        const alert = document.querySelector('.alert');
 
         form.addEventListener('submit', function(event) {
-            event.preventDefault();
-            alert.classList.add('show');
+
+            alert.classList.add('show'); 
+
             setTimeout(() => {
                 window.location.href = 'index.php'; 
             }, 3000);
