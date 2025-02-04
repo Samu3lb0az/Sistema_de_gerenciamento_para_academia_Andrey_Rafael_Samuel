@@ -108,6 +108,66 @@ if (!$conn) {
         .botao:hover {
             background-color: rgb(175, 111, 15);
         }
+
+        @media (max-width: 768px) {
+    body {
+        background-size: auto 100%;
+    }
+
+    .container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    input {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .btn {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .botao {
+        font-size: 14px;
+        padding: 8px 15px;
+        margin-top: 20px;
+        margin-left: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    input {
+        font-size: 14px;
+    }
+
+    .btn {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .botao {
+        font-size: 12px;
+        padding: 6px 12px;
+        margin-top: 10px;
+        margin-left: 20px;
+    }
+}
+
     </style>
 </head>
 <body>

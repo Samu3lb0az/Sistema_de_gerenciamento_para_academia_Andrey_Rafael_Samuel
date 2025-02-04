@@ -164,6 +164,77 @@ $conn->close();
             display: block;
             margin-top: 10px;
         }
+        @media (max-width: 768px) {
+    body {
+        background-size: cover;
+    }
+
+    .container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    input {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    button {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .botao {
+        font-size: 14px;
+        padding: 8px 15px;
+        margin-top: 20px;
+        margin-left: 30px;
+    }
+
+    .alert {
+        width: 90%;
+        font-size: 14px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    input {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    button {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .botao {
+        font-size: 12px;
+        padding: 6px 12px;
+        margin-top: 10px;
+        margin-left: 20px;
+    }
+
+    .alert {
+        font-size: 12px;
+        padding: 12px;
+    }
+}
+
     </style>
 </head>
 <body>
