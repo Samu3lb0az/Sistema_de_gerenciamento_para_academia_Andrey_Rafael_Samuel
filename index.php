@@ -1,8 +1,8 @@
 <?php
 session_start();
-
-$usuario_logado = isset($_SESSION['usuario']);
+$usuario_logado = isset($_SESSION['usuario_logado']) && $_SESSION['usuario_logado'] == true;
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,14 +28,13 @@ $usuario_logado = isset($_SESSION['usuario']);
         </ul>
 
         <div class="top-btn">
-            <?php if ($usuario_logado): ?>
-                <!-- Botão "Sair" para logout -->
-                <a href="logout.php" class="nav-btn">Sair</a>
-            <?php else: ?>
-                <!-- Botão "Matricule-se" se não estiver logado -->
-                <a href="cadastro.php" class="nav-btn">Matricule-se</a>
-            <?php endif; ?>
-        </div>
+    <?php if ($usuario_logado): ?>
+        <a href="logout.php" class="nav-btn">Sair</a>
+    <?php else: ?>
+        <a href="cadastro.php" class="nav-btn">Matricule-se</a>
+    <?php endif; ?>
+</div>
+
     </header>
 
 

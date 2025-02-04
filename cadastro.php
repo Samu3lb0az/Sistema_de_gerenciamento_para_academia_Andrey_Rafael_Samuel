@@ -1,28 +1,26 @@
 <?php
+session_start();
+
 $servername = "localhost";
 $username = "root";
 $password = "";
 $database = "db_academia";
 
-// Conectar ao banco de dados
 $conn = new mysqli($servername, $username, $password, $database);
 if ($conn->connect_error) {
     die("Conexão falhou: " . $conn->connect_error);
 }
 
 $mensagem = "";
-session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = trim($_POST['nome']);
     $cpf = trim($_POST['cpf']);
     $telefone = trim($_POST['telefone']);
 
-    // Validação: verificar se os campos estão preenchidos
     if (empty($nome) || empty($cpf) || empty($telefone)) {
         $mensagem = "Todos os campos são obrigatórios.";
     } else {
-        // Preparar a consulta para inserir o aluno no banco de dados
         $sql = "INSERT INTO aluno (aluno_nome, aluno_cpf, aluno_telefone) VALUES (?, ?, ?)";
         $stmt = $conn->prepare($sql);
 
@@ -34,7 +32,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     'nome' => $nome,
                     'cpf' => $cpf
                 ];
-                $mensagem = "Cadastro realizado com sucesso!";
+                $_SESSION['usuario_logado'] = true;
+
                 header("Location: index.php");
                 exit();
             } else {
@@ -46,8 +45,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 }
+
 $conn->close();
 ?>
+
 
 <!DOCTYPE html>
 <html lang="pt-BR">
