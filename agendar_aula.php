@@ -46,7 +46,6 @@ if (isset($_GET['aula'])) {
         <a href="./index.php" class="logo">Zen <span>Fitness</span></a>
         <ul class="navbar">
             <li><a href="./index.php">Home</a></li>
-            <li><a href="#sobre">Sobre nós</a></li>
             <li><a href="./agendar_aula.php">Agendar aula</a></li>
         </ul>
         <div class="top-btn">
