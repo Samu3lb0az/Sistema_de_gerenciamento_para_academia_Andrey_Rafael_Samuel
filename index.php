@@ -1,12 +1,8 @@
 <?php
 session_start();
-$usuario_logado = isset($_SESSION["usuario"]);
-if (!isset($_SESSION['usuario'])) {
-    header("Location: index.php"); 
-    exit();
-}
-?>
 
+$usuario_logado = isset($_SESSION['usuario']);
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +17,6 @@ if (!isset($_SESSION['usuario'])) {
 <body>
 
     <header>
-
         <div class="bx bx-menu" id="menu-icon"></div>
 
         <a href="#home" class="logo">Zen <span>Fitness</span></a>
@@ -34,13 +29,15 @@ if (!isset($_SESSION['usuario'])) {
 
         <div class="top-btn">
             <?php if ($usuario_logado): ?>
+                <!-- Botão "Sair" para logout -->
                 <a href="logout.php" class="nav-btn">Sair</a>
             <?php else: ?>
+                <!-- Botão "Matricule-se" se não estiver logado -->
                 <a href="cadastro.php" class="nav-btn">Matricule-se</a>
             <?php endif; ?>
         </div>
-
     </header>
+
 
     <section class="home" id="home">
         <div class="home-content">
