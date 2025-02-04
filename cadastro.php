@@ -49,7 +49,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $conn->close();
 ?>
 
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -159,25 +158,55 @@ $conn->close();
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             z-index: 3;
         }
+
+        .link {
+            color:rgb(235, 235, 235);
+            display: block;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
 
     <?php if (!empty($mensagem)): ?>
-        <div class="alert"><?php echo $mensagem; ?></div>
+        <div id="alert" class="alert"><?php echo $mensagem; ?></div>
     <?php endif; ?>
 
     <div class="container">
-        <form method="POST">
+        <form method="POST" onsubmit="return showAlert()">
             <h2>Cadastro de Aluno</h2>
-            <input type="text" name="nome" placeholder="Nome" required>
-            <input type="text" name="cpf" placeholder="CPF" required>
-            <input type="tel" name="telefone" placeholder="Telefone" required>
-            <button type="submit">Cadastrar</button>
-            <a href="login.php" class="link">Já tem uma conta?</a>
+                <input type="text" name="nome" placeholder="Nome" required>
+                <input type="text" name="cpf" id="cpf" placeholder="CPF" required inputmode="numeric" onkeypress="return somenteNumeros(event)">
+                <input type="tel" name="telefone" id="telefone" placeholder="Telefone" required inputmode="numeric" onkeypress="return somenteNumeros(event)">
+                <button type="submit" class="btn">Cadastrar</button>
+                <a href="login.php" class="link">Já tem uma conta?</a>
         </form>
     </div>
 
     <a href="index.php" class="botao">&#9664;</a>
+
+<script>
+    function showAlert() {
+        document.addEventListener("DOMContentLoaded", function () {
+    let alertBox = document.getElementById("alert");
+    if (alertBox) {
+        setTimeout(() => {
+            alertBox.style.display = "none";
+        }, 3000);
+    }
+});
+
+    }
+    function somenteNumeros(e) {
+        let charCode = e.which ? e.which : e.keyCode;
+        if (charCode < 48 || charCode > 57) {
+            return false;
+        }
+        return true;
+    }
+
+</script>
+
+
 </body>
 </html>
