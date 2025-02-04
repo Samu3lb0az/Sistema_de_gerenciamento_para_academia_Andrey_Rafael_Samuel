@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// Verifica se o usuário está logado
 $usuario_logado = isset($_SESSION['usuario']);
 ?>
 

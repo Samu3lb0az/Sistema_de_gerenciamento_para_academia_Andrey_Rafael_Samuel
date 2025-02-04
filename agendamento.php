@@ -2,10 +2,8 @@
 session_start();
 include "conexao.php";
 
-// Verifica se o usuário está logado
 $usuario_logado = isset($_SESSION['usuario_id']);
 
-// Buscar os agendamentos corretamente na tabela aula_agendada
 $sql = "SELECT a.aula_id, al.aluno_nome, i.instrutor_nome, e.especialidade_tipo, a.data_hora, a.status
         FROM aula_agendada a
         JOIN aluno al ON a.aluno_cod = al.aluno_cod
