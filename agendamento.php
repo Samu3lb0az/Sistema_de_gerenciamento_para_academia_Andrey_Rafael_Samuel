@@ -11,7 +11,7 @@ $sql = "SELECT a.aula_id, al.aluno_nome, i.instrutor_nome, e.especialidade_tipo,
         JOIN aluno al ON a.aluno_cod = al.aluno_cod
         JOIN instrutor i ON a.instrutor_cod = i.instrutor_cod
         JOIN especialidade e ON a.especialidade_id = e.especialidade_id";
-$result = $conexao->query($sql);
+$result = $conn->query($sql);
 ?>
 
 <!DOCTYPE html>
