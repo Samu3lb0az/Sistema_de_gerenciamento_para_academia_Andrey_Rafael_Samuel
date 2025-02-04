@@ -1,3 +1,13 @@
+<?php
+session_start();
+$usuario_logado = isset($_SESSION["usuario"]);
+if (!isset($_SESSION['usuario'])) {
+    header("Location: login.php"); 
+    exit();
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,13 +33,16 @@
         </ul>
 
         <div class="top-btn">
-            <a href="cadastro.php" class="nav-btn">Matricule-se</a>
+            <?php if ($usuario_logado): ?>
+                <a href="logout.php" class="nav-btn">Sair</a>
+            <?php else: ?>
+                <a href="cadastro.php" class="nav-btn">Matricule-se</a>
+            <?php endif; ?>
         </div>
 
     </header>
 
-
-     <section class="home" id="home">
+    <section class="home" id="home">
         <div class="home-content">
             <h3>Construa o seu</h3>
             <h1>Físico dos sonhos</h1>
@@ -38,17 +51,13 @@
             <p>Conheça mais sobre nossa rede de academias!</p>
 
             <a href="#sobre" class="btn">Saiba mais</a>
-
-            
         </div>
 
         <div class="home-img">
             <img src="./img/home_background.png" alt="Background">
         </div>
-        
-     </section>
+    </section>
 
-     
     <section class="sobre" id="sobre">
         <div class="sobre-img">
             <img src="./img/sobre-img.jpg" alt="Homem correndo na esteira">
@@ -67,10 +76,7 @@
             <button id="backToTop" class="back-to-top">
                 &#8679;
             </button>
-
-
         </div>
-         
     </section>
 
 </body>
