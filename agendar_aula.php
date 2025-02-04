@@ -86,5 +86,8 @@ if (isset($_GET['aula'])) {
             </div>
         </div>
     </div>
+
+    <a href="agendamento.php" class="btn-agendamento">Ir para Agendamentos</a>
+
 </body>
 </html>

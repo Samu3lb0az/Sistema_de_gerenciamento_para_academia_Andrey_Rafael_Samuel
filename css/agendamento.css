@@ -1,0 +1,158 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilização do corpo da página */
+body {
+    background-color: #f4f4f4;
+    text-align: center;
+    padding-top: 100px;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #222;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    height: 80px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo span {
+    color: #f39c12;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.navbar {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar li {
+    display: inline;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.3rem;
+    padding: 10px 15px;
+    transition: all 0.5s ease;
+    font-weight: 500;
+}
+
+.navbar a:hover {
+    background-color: #f39c12;
+    border-radius: 5px;
+    color: #222;
+}
+
+.nav-btn {
+    display: inline-block;
+    padding: 9px 15px;
+    background: transparent;
+    color: #f39c12;
+    border: 2px solid #f39c12;
+    border-radius: 1rem;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.5s ease-in-out;
+}
+
+.nav-btn:hover {
+    background-color: #f39c12;
+    color: white;
+    box-shadow: 0px 0px 18px #f39c12;
+}
+
+/* Container principal */
+.container {
+    margin-top: 50px;
+    padding: 20px;
+}
+
+/* Estilização do botão "Ir para Agendamentos" */
+.btn-agendamento {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #f39c12;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.3s, transform 0.2s;
+    margin-top: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-agendamento:hover {
+    background: #f5a824;
+    transform: scale(1.05);
+}
+
+/* Estilização da tabela */
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f39c12;
+    color: white;
+    font-size: 18px;
+}
+
+td {
+    font-size: 16px;
+}
+
+tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* Links das ações */
+td a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+td a:hover {
+    color: #0056b3;
+}
