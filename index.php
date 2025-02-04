@@ -1,11 +1,13 @@
 <?php
 session_start();
-$usuario_logado = isset($_SESSION['usuario_logado']) && $_SESSION['usuario_logado'] == true;
+
+// Verifica se o usuário está logado
+$usuario_logado = isset($_SESSION['usuario']);
 ?>
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

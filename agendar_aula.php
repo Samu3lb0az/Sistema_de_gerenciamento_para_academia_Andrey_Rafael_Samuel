@@ -24,6 +24,7 @@ if (isset($_GET['aula'])) {
     echo json_encode($instrutores);
     exit; 
 }
+$usuario_logado = isset($_SESSION['usuario']);
 ?>
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -50,8 +51,12 @@ if (isset($_GET['aula'])) {
             <li><a href="./agendar_aula.php">Agendar aula</a></li>
         </ul>
         <div class="top-btn">
-            <a href="cadastro.php" class="nav-btn">Matricule-se</a>
-        </div>
+    <?php if ($usuario_logado): ?>
+        <a href="logout.php" class="nav-btn">Sair</a>
+    <?php else: ?>
+        <a href="cadastro.php" class="nav-btn">Matricule-se</a>
+    <?php endif; ?>
+</div>
     </header>
 
     <h1>Agende sua Aula</h1>
